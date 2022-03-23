@@ -1,5 +1,29 @@
 const functions = require("./functions");
 
+const initDatabase = () => console.log("Database initialized");
+const closeDatabase = () => console.log("Database closed");
+
+// beforeEach(initDatabase);
+// afterEach(closeDatabase);
+
+// beforeAll(initDatabase);
+// afterAll(closeDatabase);
+
+const nameCheck = () => console.log("Checking name...");
+
+describe("checking names", () => {
+  beforeEach(nameCheck);
+
+  test("user is sanish", () => {
+    const user = "sanish";
+    expect(user).toBe("sanish");
+  });
+  test("user is sunny", () => {
+    const user = "sunny";
+    expect(user).toBe("sunny");
+  });
+});
+
 //addition tests
 test("Adds 2 + 2 to equal to 4", () => {
   expect(functions.add(2, 2)).toBe(4);
@@ -111,5 +135,3 @@ test("User fetched name should be Leanne Graham", () => {
     });
   });
 });
-
-
